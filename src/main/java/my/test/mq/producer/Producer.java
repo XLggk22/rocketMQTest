@@ -6,6 +6,7 @@ import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.alibaba.rocketmq.client.producer.SendResult;
 import com.alibaba.rocketmq.common.message.Message;
+import sun.rmi.runtime.Log;
 
 public class Producer {
     public static void main(String[] args) throws MQClientException {
@@ -23,6 +24,7 @@ public class Producer {
                                 .getBytes()// body
                 );
                 SendResult sendResult = producer.send(msg);
+                System.out.println("sendResult=====================>"+sendResult);
             }
         } catch (Exception e) {
             e.printStackTrace();
